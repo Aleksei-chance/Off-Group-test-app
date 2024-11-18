@@ -1,10 +1,10 @@
 <?php
 
-use \Core\Aplicanion;
+use \Core\Application;
 use \Core\Request;
-function app(): Aplicanion
+function app(): Application
 {
-    return Aplicanion::$app;
+    return Application::$app;
 }
 
 function request(): Request
