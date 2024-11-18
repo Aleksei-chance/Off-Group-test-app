@@ -5,4 +5,4 @@ use App\Controllers\OrderController;
 
 $app->router->get('/orders', [OrderController::class, 'view']);
 
-var_dump($app->router->getRoutes());
+$app->router->get('order/(?P<slug>[a-z0-9_-]+)', []);

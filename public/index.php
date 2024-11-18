@@ -1,6 +1,6 @@
 <?php
 
-$startTime = microtime(true);
+//$startTime = microtime(true);
 
 if (PHP_MAJOR_VERSION < 8)
 {
@@ -16,4 +16,4 @@ require_once CONFIG . '/routes.php';
 $app->run();
 
 
-var_dump('Time: '.microtime(true) - $startTime);
+//var_dump('Time: '.microtime(true) - $startTime);
