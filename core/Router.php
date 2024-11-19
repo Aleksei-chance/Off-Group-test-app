@@ -57,7 +57,7 @@ class Router
         if($route === false)
         {
             $this->response->setResponseCode(404);
-            echo '404 - page not found';
+            abort();
             die;
         }
         if(is_array($route['callback']))
