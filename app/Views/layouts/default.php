@@ -6,12 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0,
             maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Off Group</title>
+    <link rel="stylesheet" href="<?= base_url('/css/style.css') ?>">
+    <script src="<?= base_url('/js/jquery-3.7.1.min.js') ?>"></script>
+    <script src="<?= base_url('/js/script.js') ?>"></script>
 </head>
 <body>
+<div class="content">
+    <?= $this->view; ?>
+</div>
 
-<h1>Test</h1>
-<?= $this->view; ?>
+
+<div id="modal"></div>
+<div id="modal_g"></div>
 
 </body>
 </html>

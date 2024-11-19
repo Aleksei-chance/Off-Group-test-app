@@ -14,6 +14,11 @@ class Router
     {
     }
 
+    public function getParams(): array
+    {
+        return $this->route_params;
+    }
+
     public function add($path, $callback, $method): self
     {
         $path = trim($path, '/');
@@ -65,7 +70,13 @@ class Router
             $route['callback'][0] = new $route['callback'][0];
         }
 
-        return call_user_func($route['callback']);
+        $param = null;
+        if($this->route_params)
+        {
+            $param = $this->route_params[0];
+        }
+
+        return call_user_func_array($route['callback'], $this->route_params);
     }
 
     protected function matchRoute($path):mixed

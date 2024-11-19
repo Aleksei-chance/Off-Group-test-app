@@ -9,3 +9,10 @@ const CORE = ROOT . '/core';
 const VIEWS = APP . '/Views';
 const LAYOUT = 'default';
 const PATH = 'http://localhost:8888';
+
+const DB = array(
+    'db_host' => 'localhost',
+    'db_user' => 'root',
+    'db_password' => 'root',
+    'db_db' => 'off_group',
+);

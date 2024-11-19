@@ -41,3 +41,8 @@ function base_url($path = ''):string
 {
     return PATH . $path;
 }
+
+function db():\mysqli
+{
+    return new \mysqli(DB['db_host'], DB['db_user'], DB['db_password'], DB['db_db']);
+}
