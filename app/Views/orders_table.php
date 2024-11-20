@@ -1,47 +1,47 @@
 <?php if(count($items ?? []) > 0): ?>
-<table>
-    <thead>
-        <tr>
-            <th style="width: 1px">#</th>
-            <th style="width: 1px">Name</th>
-            <th style="width: 150px">Contacts</th>
-            <th>Items</th>
-            <th style="width: 150px">Total</th>
-            <th style="width: 1px">Status</th>
-            <th style="width: 1px"></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="table-responsive">
+    <table class="table table-striped table-hover text-center">
+        <thead class="">
+            <tr class="table-primary">
+                <th scope="col">#</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">Items</th>
+                <th scope="col">Total</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
         <?php foreach ($items as $item): ?>
-            <tr>
-                <td class="text_center small">
+            <tr style="vertical-align: middle;">
+                <td scope="row">
                     <?= $item['id'] ?>
                 </td>
-                <td class="text_center small" style="white-space: nowrap;">
-                    <?= $item['name'] ?>
-                </td>
-                <td>
-                    <div class="d-flex column small">
-                        <?= $item['phone'] ?>
-                        <a href="mailto:<?= $item['email'] ?>"><?= $item['email'] ?></a>
-                    </div>
+                <td style="white-space: nowrap;">
+                    <?= $item['receiver'] ?>
+                    <?php if($item['receiver_phone']): ?>
+                    <br>
+                    <a href="tel:<?= $item['receiver_phone'] ?>"><?= $item['receiver_phone'] ?></a>
+                    <?php endif; ?>
                 </td>
                 <td>
                     <?= $item['items'] ?>
                 </td>
-                <td class="text_center small" style="white-space: nowrap;">
+                <td style="white-space: nowrap;">
                     <?= $item['total'] ?>
                 </td>
-                <td class="text_center small" style="white-space: nowrap;">
+                <td style="white-space: nowrap;">
                     <?= $item['isPaid'] ?>
                 </td>
-                <td class="text_center small" style="white-space: nowrap;">
-                    <button onclick="location.href='/order/<?= $item['id'] ?>'">open</button>
+                <td style="white-space: nowrap;">
+                    <button class="btn btn-secondary btn-sm" onclick="location.href='/order/<?= $item['id'] ?>'">open</button>
                 </td>
             </tr>
         <?php endforeach; ?>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+
 <?php else: ?>
     <center>No data</center>
 <?php endif; ?>
